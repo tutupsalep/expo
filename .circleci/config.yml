@@ -164,6 +164,8 @@ jobs:
       - yarn:
           working_directory: ~/project/tools-public
       - run: nix run nixpkgs.nodejs-8_x nixpkgs.fastlane -c fastlane ios create_simulator_build
+      - store_artifacts:
+          path: ~/Library/Logs/fastlane/
 
   shell_app_sim_base_ios:
     executor: mac
